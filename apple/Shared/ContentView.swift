@@ -10,7 +10,7 @@ import BreezeCore
 
 struct ContentView: View {
     
-    //@ObservedObject
+    @ObservedObject
     var model = CrossViewModel(value: "Breeze")
     
     var body: some View {

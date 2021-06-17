@@ -11,9 +11,15 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "1.7.4"),
+        .package(url: "https://github.com/OpenCombine/OpenCombine.git", from: "0.12.0")
     ],
     targets: [
-        .target(name: "BreezeCore", dependencies: ["SwiftSoup"]),
+        .target(name: "BreezeCore", dependencies: [
+            "SwiftSoup",
+            "OpenCombine",
+            .product(name: "OpenCombineFoundation", package: "OpenCombine"),
+            .product(name: "OpenCombineDispatch", package: "OpenCombine")
+        ]),
         .testTarget(name: "BreezeCoreTests", dependencies: ["BreezeCore"]),
     ]
 )

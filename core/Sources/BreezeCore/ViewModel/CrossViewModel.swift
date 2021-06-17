@@ -1,6 +1,15 @@
 import Foundation
 import Dispatch
 import SwiftSoup
+#if os(Android)
+/*
+ we use OpenCombine for ObservableObject
+ TODO: use objectWillChange in Android to trigger changes
+ Note: before continuing we need to upgrade the toolchain to at least 5.1 for propertyWrappers.
+ 
+ */
+import OpenCombine
+#endif
 
 public protocol CrossDelegate { 
 
@@ -17,10 +26,19 @@ public struct CrossModelData: Codable, Hashable {
     public var subTitle: String = "Subtitle"
 }
 
-public class CrossViewModel {
+
+@available(iOS 13.0, *, macOS 10.15, *)
+public class CrossViewModel: ObservableObject {
     
     var delegate: CrossDelegate?
     public var data: CrossModelData
+    
+    /*
+     TODO: before continuing we need to upgrade the toolchain to at least 5.1 for propertyWrappers.
+     */
+    #if os(Android)
+    public var objectWillChange = ObjectWillChangePublisher()
+    #endif
     
     public var stringProp: String = "Subtitle"
     public static var staticString: String = "static"
