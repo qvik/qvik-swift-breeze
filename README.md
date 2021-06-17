@@ -24,6 +24,8 @@ After a successful setup, you can clone this repo and build it with Android Stud
 
 ## How to build [iOS/MacOS]
 
+Note that nothing is built for these platforms yet, all focus is on getting things running smoothly on Android.
+
 For building an iOS application you need at least Xcode 12. Minimal target version of operation systems is iOS 14 and MacOS 11. Minimal target can be lower if you build a separate UI for iOS/mac as well.
 
 ## How to build for Windows, Browsers and Linux
