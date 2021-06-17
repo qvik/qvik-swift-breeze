@@ -7,31 +7,17 @@ import XCTest
 
 
 
-extension WeatherDatabaseTest {
-  static var allTests = [
-	  ("testDefaults", testDefaults),
-  	  ("testAddLocation", testAddLocation),
-  	  ("testRemoveLocation", testRemoveLocation),
-  	  ("testClearLocation", testClearLocation),
-	]
-
-}
-
+/*
 extension WeatherRepositoryTest {
   static var allTests = [
 	  ("testLoadSavedLocations", testLoadSavedLocations),
-  	  ("testAddLocationToSaved", testAddLocationToSaved),
-  	  ("testRemoveSavedLocation", testRemoveSavedLocation),
-  	  ("testSearchLocationsSuccessful", testSearchLocationsSuccessful),
-  	  ("testSearchLocationsFail", testSearchLocationsFail),
-  	  ("testWeatherSuccessful", testWeatherSuccessful),
-  	  ("testWeatherFail", testWeatherFail),
+  	  
 	]
 
 }
 
-
 XCTMain([
-		testCase(WeatherDatabaseTest.allTests),
 		testCase(WeatherRepositoryTest.allTests),
 ])
+
+ */
