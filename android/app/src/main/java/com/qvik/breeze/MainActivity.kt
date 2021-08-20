@@ -50,12 +50,14 @@ class MainActivity : AppCompatActivity() {
         })
 
         val list = ArrayList<CrossViewModel>()
-        val item = CrossViewModel.init("First item")
-        item.setDelegate(stringAdapter)
+        val item = CrossViewModel.init(stringAdapter, "First item")
         list.add(item)
-        
-        list.add(CrossViewModel.init("Second item"))
+
+        list.add(CrossViewModel.init(stringAdapter,"Second item"))
 
         liveData.postValue(list)
+
+        print("CrossViewModel static: ")
+        print(CrossViewModel.staticString)
     }
 }

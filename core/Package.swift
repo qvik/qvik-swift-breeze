@@ -1,8 +1,9 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
     name: "BreezeCore",
+    platforms: [.iOS(.v13), .macOS(.v10_15)],
     products:[
         .library(
             name: "BreezeCore",

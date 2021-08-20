@@ -8,6 +8,8 @@ interface CrossDelegateAndroid {
 
     @SwiftCallbackFunc("onCall(value:)")
     fun onCall(value: String)
+    @SwiftCallbackFunc()
+    fun redraw()
 
     companion object {
         

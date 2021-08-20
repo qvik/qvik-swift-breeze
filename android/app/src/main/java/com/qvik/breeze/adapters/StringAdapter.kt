@@ -57,13 +57,15 @@ class StringAdapter(private var items: List<CrossViewModel>) :
     override 
     fun onCall(value: String) {
 
-        println(value)
-
-        //If coming from a bg-thread we need to make sure we get back into the UI-thread, otherwise crash
-        handler.post({
-            notifyDataSetChanged()
-        })
+        println(value);
     }
+
+        override fun redraw() {
+            //If coming from a bg-thread we need to make sure we get back into the UI-thread, otherwise crash - Swift main thread is not usually Kotlin main.
+            handler.post({
+                notifyDataSetChanged()
+            })
+        }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = items.size

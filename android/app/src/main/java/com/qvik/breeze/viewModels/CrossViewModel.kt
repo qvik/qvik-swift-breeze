@@ -30,20 +30,15 @@ class CrossViewModel private constructor() {
     external fun getData(): CrossModelData
 
     // we can call from Swift into Kotlin by implementing a common protocol, here the CrossDelegateAndroid protocol has the "onCall" function
-    @SwiftFunc("setDelegate(delegate:)")
-    external fun setDelegate(delegate: CrossDelegateAndroid)
 
     companion object {
-        @JvmStatic @SwiftFunc("init(value:)")
-        external fun init(value: String): CrossViewModel
+        @JvmStatic @SwiftFunc("init(delegate: value:)")
+        external fun init(delegate: CrossDelegateAndroid, value: String): CrossViewModel
 
-        @JvmStatic
         @get:SwiftGetter("staticString")
         @set:SwiftSetter("staticString")
         var staticString: String
             external get
             external set
     }
-
 }
-
