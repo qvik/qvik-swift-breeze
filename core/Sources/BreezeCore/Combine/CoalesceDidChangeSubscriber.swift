@@ -12,11 +12,6 @@ import Dispatch
     import OpenCombine
 #endif
 
-//Conditionally import Foundation networking
-#if canImport(FoundationNetworking)
-    //@_exported import FoundationNetworking
-#endif
-
 
 /// To notify Android's JVM of changes we coalesce all notifications of changed properties into one message, and just send it to our redraw delegate
 class CoalesceDidChangeSubscriber: Subscriber {
