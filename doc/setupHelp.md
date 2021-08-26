@@ -6,6 +6,4 @@ Download prebuilt toolchain here:
 
 https://github.com/readdle/swift-android-toolchain/releases
 
-The latest is a bit old: swift-android-readdle-5.0-r13
-
 Double check the values in the local.properties file in the Android project - missmatch here is a common source of errors.

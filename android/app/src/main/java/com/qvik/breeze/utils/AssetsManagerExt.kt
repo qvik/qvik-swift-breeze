@@ -5,6 +5,7 @@ import android.util.Log
 import java.io.*
 
 fun AssetManager.copyAssetsIfNeeded(filename: String, destination: String) {
+
     var inputStream: InputStream? = null
     var outputStream: OutputStream? = null
     try {
@@ -38,5 +39,8 @@ fun AssetManager.copyAssetsIfNeeded(filename: String, destination: String) {
         }
         closeSilently(inputStream)
         closeSilently(outputStream)
+
+        //Log.d("breezeApp", "Copied assets: $filename")
     }
+
 }

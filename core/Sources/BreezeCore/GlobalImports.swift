@@ -14,8 +14,10 @@
 #endif
 
 //Conditionally import Foundation networking
+/*
 #if canImport(FoundationNetworking)
     @_exported import FoundationNetworking
 #else
     @_exported import Foundation
 #endif
+*/

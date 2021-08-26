@@ -31,3 +31,7 @@ For building an iOS application you need at least Xcode 12. Minimal target versi
 ## How to build for Windows, Browsers and Linux
 
 Swift is supported on these platforms as well, so there is nothing stopping anyone - but at the moment we focus on iOS and Android.
+
+# Help / Knowledge
+
+Best sources are the swift dev forums, and the wonderful people in this thread: https://forums.swift.org/t/partial-nightlies-for-android-sdk/

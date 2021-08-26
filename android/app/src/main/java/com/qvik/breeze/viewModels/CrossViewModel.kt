@@ -21,9 +21,9 @@ class CrossViewModel private constructor() {
         external get
         external set
 
-    // talk to swift is easy, just define a function like this
-    @SwiftFunc("trigger()")
-    external fun trigger()
+    // talk to swift is easy, just define a function like this - but not needed here
+    //@SwiftFunc("trigger()")
+    //external fun trigger()
 
     // we can also transfer structs
     @SwiftFunc("getData()")
@@ -34,11 +34,14 @@ class CrossViewModel private constructor() {
     companion object {
         @JvmStatic @SwiftFunc("init(delegate: value:)")
         external fun init(delegate: CrossDelegateAndroid, value: String): CrossViewModel
-
+    /*
+    TODO: figure this out:
         @get:SwiftGetter("staticString")
         @set:SwiftSetter("staticString")
         var staticString: String
             external get
             external set
+           
+    */
     }
 }

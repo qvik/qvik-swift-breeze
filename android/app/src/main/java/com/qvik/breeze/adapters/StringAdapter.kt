@@ -13,6 +13,7 @@ import com.qvik.breeze.viewModels.CrossDelegateAndroid
 import com.qvik.breeze.viewModels.CrossViewModel
 
 import android.os.Handler
+import android.util.Log
 
 class StringAdapter(private var items: List<CrossViewModel>) :
     RecyclerView.Adapter<StringAdapter.StringViewHolder>(), CrossDelegateAndroid 
@@ -42,26 +43,24 @@ class StringAdapter(private var items: List<CrossViewModel>) :
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
 
+        //here is were we update the view
         val item = items[position]
-        // stringProp lives in Swift land, we can use it as a regular property
-        item.stringProp = "(0_0)"
-        item.trigger()
         val data = item.getData()
         holder.titleText.text = data.string
         holder.tempText.text = item.stringProp  // now we retrieve it from Swift, it should be the same as above
         holder.weatherState.setImageResource(R.drawable.ic_c)
     }
 
-    val handler = Handler()
+        val handler = Handler()
 
-    override 
-    fun onCall(value: String) {
-
-        println(value);
-    }
+        override
+        fun onCall(value: String) {
+            Log.d("breezeApp", "oncall: " + value.toString())
+        }
 
         override fun redraw() {
-            //If coming from a bg-thread we need to make sure we get back into the UI-thread, otherwise crash - Swift main thread is not usually Kotlin main.
+            Log.d("breezeApp", "Calling redraw")
+            //If coming from a bg-thread we need to make sure we get back into the UI-thread, otherwise crash - Swift main thread is not necessarily Kotlin main.
             handler.post({
                 notifyDataSetChanged()
             })

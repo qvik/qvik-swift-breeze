@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.lifecycle.MutableLiveData
+import android.util.Log
 
 import android.os.Handler
 
@@ -50,14 +51,20 @@ class MainActivity : AppCompatActivity() {
         })
 
         val list = ArrayList<CrossViewModel>()
-        val item = CrossViewModel.init(stringAdapter, "First item")
+        var item = CrossViewModel.init(stringAdapter, "First item!")
+        // stringProp lives in Swift land, we can use it as a regular property
+        item.stringProp = "(0_0)"
         list.add(item)
-
-        list.add(CrossViewModel.init(stringAdapter,"Second item"))
-
+/*
+        item = CrossViewModel.init(stringAdapter, "Second item!")
+        // stringProp lives in Swift land, we can use it as a regular property
+        item.stringProp = "(0_0)"
+        list.add(item)
+*/
         liveData.postValue(list)
-
-        print("CrossViewModel static: ")
-        print(CrossViewModel.staticString)
+        Log.d("breezeApp", "MainActivity is launched!")
+        //TODO: this is broken
+        //print("CrossViewModel static: ")
+        //print(CrossViewModel.staticString)
     }
 }

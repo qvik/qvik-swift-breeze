@@ -18,7 +18,7 @@ android {
     //buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.readdle.weather"
+        applicationId "com.qvik.breeze"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1

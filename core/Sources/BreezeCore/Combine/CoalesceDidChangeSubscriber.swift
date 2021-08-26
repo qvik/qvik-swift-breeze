@@ -7,14 +7,14 @@ import Foundation
 import Dispatch
 
 #if canImport(Combine)
-    @_exported import Combine
+    import Combine
 #else
-    @_exported import OpenCombine
+    import OpenCombine
 #endif
 
 //Conditionally import Foundation networking
 #if canImport(FoundationNetworking)
-    @_exported import FoundationNetworking
+    //@_exported import FoundationNetworking
 #endif
 
 
